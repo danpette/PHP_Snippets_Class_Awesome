@@ -6,7 +6,15 @@ use Monolog\Logger;
 use Monolog\Formatter\NormalizerFormatter;
 
 /**
- * Logs to a MySQL database.
+ * Logs Database
+ * 
+ * Supports:
+ * MySQL, MariaDB -> php_pdo_mysql
+ * MSSQL (Windows) -> php_pdo_sqlsrv
+ * MSSQL (Liunx/UNIX) -> php_pdo_dblib
+ * SQLite -> php_pdo_sqlite
+ * PostgreSQL -> php_pdo_pgsql
+ * Sybase -> php_pdo_dblib
  *
  * Example:
  * $database = new medoo('test');
