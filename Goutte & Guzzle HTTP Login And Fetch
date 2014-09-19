@@ -2,7 +2,7 @@
 use Goutte\Client;
 
 $crawler = $client->request('GET', 'http://www.urlofpage.com');
-$form = $crawler->selectButton('Login >')->form();
+$form = $crawler->selectButton('Button text')->form();
 $crawler = $client->submit($form, array('username_name_field' => 'your username/email', 'passowrd_name_filed' => 'your password'));
 $crawler = $client->request('GET', 'http://www.urlofnpage.com/member/repport/?g=xml')
 $data = $crawler->html();
