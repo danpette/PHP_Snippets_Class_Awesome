@@ -1,6 +1,7 @@
 AwesomePHP
 ==========
 
+PHP 5.5+
 Most examples using: http://medoo.in/ as database wrapper to support as many database types as possible.
 
 ## Input Check
