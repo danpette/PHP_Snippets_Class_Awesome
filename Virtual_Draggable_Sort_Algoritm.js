@@ -13,14 +13,10 @@ angular.forEach($scope.filterModel, function (obj, ident) {
 
 i = 0;
 angular.forEach($scope.filterModel, function (obj, ident) {
-  if (e.oldIndex > e.newIndex) {
-    if ($scope.filterModel[i].VirtualSort >= e.newIndex && $scope.filterModel[i].VirtualSort < e.oldIndex) {
-      $scope.filterModel[i].VirtualSort++;
-    }
-  } else {
-    if ($scope.filterModel[i].VirtualSort <= e.newIndex && $scope.filterModel[i].VirtualSort > e.oldIndex) {
-      $scope.filterModel[i].VirtualSort--;
-    }
+  if (e.oldIndex > e.newIndex && $scope.filterModel[i].VirtualSort >= e.newIndex && $scope.filterModel[i].VirtualSort < e.oldIndex) {
+    $scope.filterModel[i].VirtualSort++;
+  }else if (e.oldIndex < e.newIndex && $scope.filterModel[i].VirtualSort <= e.newIndex && $scope.filterModel[i].VirtualSort > e.oldIndex) {
+    $scope.filterModel[i].VirtualSort--;
   }
   i++;
 });
