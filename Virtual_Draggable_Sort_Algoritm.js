@@ -11,26 +11,19 @@ angular.forEach($scope.filterModel, function (obj, ident) {
   i++;
 });
 
-if (e.oldIndex > e.newIndex) {
-  //shift up
-  i = 0;
-  angular.forEach($scope.filterModel, function (obj, ident) {
+i = 0;
+angular.forEach($scope.filterModel, function (obj, ident) {
+  if (e.oldIndex > e.newIndex) {
     if ($scope.filterModel[i].VirtualSort >= e.newIndex && $scope.filterModel[i].VirtualSort < e.oldIndex) {
       $scope.filterModel[i].VirtualSort++;
     }
-    i++;
-  });
-
-} else {
-  //shift down
-  i = 0;
-  angular.forEach($scope.filterModel, function (obj, ident) {
+  } else {
     if ($scope.filterModel[i].VirtualSort <= e.newIndex && $scope.filterModel[i].VirtualSort > e.oldIndex) {
       $scope.filterModel[i].VirtualSort--;
     }
-    i++;
-  });
-}
+  }
+  i++;
+});
                     
 i = 0;
 angular.forEach($scope.filterModel, function (obj, ident) {
